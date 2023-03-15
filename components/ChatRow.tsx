@@ -31,8 +31,11 @@ function ChatRow({ id }: Props) {
     router.replace("/");
   };
   return (
-    <div className={`chatRow justify-center ${active && "bg-gray-700/50"}`}>
-      <Link href={`/chat/${id}`} className="flex flex-1 gap-1 py-3">
+    <div className={`chatRow justify-center ${active && "bg-gray-700/50"} `}>
+      <Link
+        href={`/chat/${id}`}
+        className="flex flex-1 gap-1 py-3 overflow-hidden"
+      >
         <ChatBubbleLeftIcon className="h-5 w-5" />
         <p className="flex-1 hidden md:inline-flex truncate">
           {messages?.docs[messages?.docs.length - 1]?.data().text || "New Chat"}
